@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.5.0-rc1] - 2019-03-29
+
 ### Changed
 
 - Do not send OpenResty version in the `Server` response header [PR #997](https://github.com/3scale/APIcast/pull/997)
@@ -590,7 +592,7 @@ expressed might change in future releases.
 ### Changed
 - Major rewrite using JSON configuration instead of code generation.
 
-[Unreleased]: https://github.com/3scale/apicast/compare/v3.5.0-beta1...HEAD
+[Unreleased]: https://github.com/3scale/apicast/compare/v3.5.0-rc1...HEAD
 [2.0.0]: https://github.com/3scale/apicast/compare/v0.2...v2.0.0
 [3.0.0-alpha1]: https://github.com/3scale/apicast/compare/v2.0.0...v3.0.0-alpha1
 [3.0.0-alpha2]: https://github.com/3scale/apicast/compare/v3.0.0-alpha1...v3.0.0-alpha2
@@ -623,3 +625,4 @@ expressed might change in future releases.
 [3.4.0-rc2]: https://github.com/3scale/apicast/compare/v3.4.0-rc1...v3.4.0-rc2
 [3.4.0]: https://github.com/3scale/apicast/compare/v3.4.0-rc2...v3.4.0
 [3.5.0-beta1]: https://github.com/3scale/apicast/compare/v3.4.0...v3.5.0-beta1
+[3.5.0-rc1]: https://github.com/3scale/apicast/compare/v3.5.0-beta1...v3.5.0-rc1

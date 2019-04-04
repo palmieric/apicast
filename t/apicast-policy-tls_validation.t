@@ -60,7 +60,7 @@ to_json({
           { name => 'apicast.policy.tls_validation',
             configuration => {
               whitelist => [
-                { pem_certificate => CORE::join('', read_file('t/fixtures/CA/CA.crt')) }
+                { pem_certificate => CORE::join('', read_file('t/fixtures/CA/intermediate-ca.crt')) }
               ]
             }
           },

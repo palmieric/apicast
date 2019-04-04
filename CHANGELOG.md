@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Added
+
+- Ability to configure client certificate chain depth [PR #1006](https://github.com/3scale/APIcast/pull/1006)
+
+## Fixed
+
+- Segfault when normalizing some client certificates [PR #1006](https://github.com/3scale/APIcast/pull/1006)
+
 ## [3.5.0-rc1] - 2019-03-29
 
 ### Changed

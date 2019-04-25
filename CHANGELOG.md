@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Fixed
 
 - Segfault when normalizing some client certificates [PR #1006](https://github.com/3scale/APIcast/pull/1006)
+- Fixed incorrect connection reuse for requests on different domains [PR #1021](https://github.com/3scale/APIcast/pull/1021), [THREESCALE-2205](https://issues.jboss.org/browse/THREESCALE-2205)
 
 ## [3.5.0] - 2019-05-07
 

@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Segfault when normalizing some client certificates [PR #1006](https://github.com/3scale/APIcast/pull/1006)
 
+## [3.5.0] - 2019-05-07
+
+`3.5.0-beta1` was considered final and became `3.5.0`. Notice that this version does not include the changes introduced in `3.5.0-rc1`.
+
 ## [3.5.0-rc1] - 2019-03-29
 
 ### Changed
@@ -634,3 +638,4 @@ expressed might change in future releases.
 [3.4.0]: https://github.com/3scale/apicast/compare/v3.4.0-rc2...v3.4.0
 [3.5.0-beta1]: https://github.com/3scale/apicast/compare/v3.4.0...v3.5.0-beta1
 [3.5.0-rc1]: https://github.com/3scale/apicast/compare/v3.5.0-beta1...v3.5.0-rc1
+[3.5.0]: https://github.com/3scale/apicast/compare/v3.5.0-beta1...v3.5.0

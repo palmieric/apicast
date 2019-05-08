@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Added
 
-- Ability to configure client certificate chain depth [PR #1006](https://github.com/3scale/APIcast/pull/1006)
+- Ability to configure client certificate chain depth [PR #1006](https://github.com/3scale/APIcast/pull/1006), [THREESCALE-2383](https://issues.jboss.org/browse/THREESCALE-2383)
 
 ## Fixed
 
@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Do not send OpenResty version in the `Server` response header [PR #997](https://github.com/3scale/APIcast/pull/997)
+- Do not send OpenResty version in the `Server` response header [PR #997](https://github.com/3scale/APIcast/pull/997), [THREESCALE-1989](https://issues.jboss.org/browse/THREESCALE-1989)
 - When using OIDC, the "no-body" option is now set when contacting the 3scale backend. This option helps reducing the workload in the 3scale backend and the network traffic [#998](https://github.com/3scale/APIcast/pull/998), [THREESCALE-2006](https://issues.jboss.org/browse/THREESCALE-2006)
 
 ## [3.5.0-beta1] - 2019-03-12

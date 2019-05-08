@@ -6,13 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.5.1] - 2019-05-07
+
+Apart from the changes mentioned in this section, this version also includes the changes introduced in `3.5.0-rc1` that were not included in `3.5.0`.
+
 ## Added
 
-- Ability to configure client certificate chain depth [PR #1006](https://github.com/3scale/APIcast/pull/1006)
+- Ability to configure client certificate chain depth [PR #1006](https://github.com/3scale/APIcast/pull/1006), [THREESCALE-2383](https://issues.jboss.org/browse/THREESCALE-2383)
 
 ## Fixed
 
 - Segfault when normalizing some client certificates [PR #1006](https://github.com/3scale/APIcast/pull/1006)
+- Fixed incorrect connection reuse for requests on different domains [PR #1021](https://github.com/3scale/APIcast/pull/1021), [THREESCALE-2205](https://issues.jboss.org/browse/THREESCALE-2205)
 
 ## [3.5.0] - 2019-05-07
 
@@ -22,7 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Do not send OpenResty version in the `Server` response header [PR #997](https://github.com/3scale/APIcast/pull/997)
+- Do not send OpenResty version in the `Server` response header [PR #997](https://github.com/3scale/APIcast/pull/997), [THREESCALE-1989](https://issues.jboss.org/browse/THREESCALE-1989)
 - When using OIDC, the "no-body" option is now set when contacting the 3scale backend. This option helps reducing the workload in the 3scale backend and the network traffic [#998](https://github.com/3scale/APIcast/pull/998), [THREESCALE-2006](https://issues.jboss.org/browse/THREESCALE-2006)
 
 ## [3.5.0-beta1] - 2019-03-12
@@ -604,7 +609,7 @@ expressed might change in future releases.
 ### Changed
 - Major rewrite using JSON configuration instead of code generation.
 
-[Unreleased]: https://github.com/3scale/apicast/compare/v3.5.0-rc1...HEAD
+[Unreleased]: https://github.com/3scale/apicast/compare/v3.5.1...HEAD
 [2.0.0]: https://github.com/3scale/apicast/compare/v0.2...v2.0.0
 [3.0.0-alpha1]: https://github.com/3scale/apicast/compare/v2.0.0...v3.0.0-alpha1
 [3.0.0-alpha2]: https://github.com/3scale/apicast/compare/v3.0.0-alpha1...v3.0.0-alpha2
@@ -639,3 +644,4 @@ expressed might change in future releases.
 [3.5.0-beta1]: https://github.com/3scale/apicast/compare/v3.4.0...v3.5.0-beta1
 [3.5.0-rc1]: https://github.com/3scale/apicast/compare/v3.5.0-beta1...v3.5.0-rc1
 [3.5.0]: https://github.com/3scale/apicast/compare/v3.5.0-beta1...v3.5.0
+[3.5.1]: https://github.com/3scale/apicast/compare/v3.5.0...v3.5.1

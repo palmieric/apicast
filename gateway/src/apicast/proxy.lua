@@ -110,10 +110,10 @@ function _M:authorize(service, usage, credentials, ttl)
 
   local formatted_usage = usage:format()
   local encoded_credentials = encode_args(credentials)
+  local encoded_usage = encode_args(formatted_usage)
 
   output_debug_headers(service, encoded_usage, encoded_credentials)
-
-  local encoded_usage = encode_args(formatted_usage)
+  
   if encoded_usage == '' then
     return errors.no_match(service)
   end

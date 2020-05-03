@@ -323,3 +323,53 @@ GET /foo%20/bar/?user_key=foo
 --- response_body
 yay, api backend
 --- error_code: 200
+
+=== TEST 6: Debug headers when mapping rule is not matched
+The debug headers are returned also when a service or a mapping rule
+is not matched 
+
+--- http_config
+  include $TEST_NGINX_UPSTREAM_CONFIG;
+  lua_package_path "$TEST_NGINX_LUA_PATH";
+  init_by_lua_block {
+    require('apicast.configuration_loader').mock({
+      services = {
+        {
+          id = 42,
+          backend_version = 1,
+          backend_authentication_type = 'service_token',
+          backend_authentication_value = 'my-token',
+          proxy = {
+            api_backend = 'http://127.0.0.1:$TEST_NGINX_SERVER_PORT/api/',
+            proxy_rules = {
+              { pattern = '/foo?bar=baz',
+                querystring_parameters = { bar = 'baz' },
+                http_method = 'POST',
+                metric_system_name = 'bar',
+                delta = 7 }
+            }
+          }
+        },
+      }
+    })
+  }
+--- config
+  include $TEST_NGINX_APICAST_CONFIG;
+
+  location /api/ {
+    echo "api response";
+  }
+
+  location /transactions/authrep.xml {
+    content_by_lua_block { ngx.exit(200) }
+  }
+--- request
+POST /bar
+--- more_headers
+X-3scale-Debug: my-token
+--- response_body
+api response
+--- error_code: 404
+--- response_headers
+X-3scale-matched-rules: /foo?bar=baz
+X-3scale-usage: usage%5Bbar%5D=7

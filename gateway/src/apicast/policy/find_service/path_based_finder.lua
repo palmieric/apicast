@@ -1,6 +1,5 @@
 local mapping_rules_matcher = require 'apicast.mapping_rules_matcher'
 local escape = require("resty.http.uri_escape")
-local pretty = require("pl.pretty")
 
 local _M = {}
 

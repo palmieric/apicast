@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Fixed issues with liquid replaces [THREESCALE-4937](https://issues.jboss.org/browse/THREESCALE-4937) [PR #1185](https://github.com/3scale/APIcast/pull/1185)
 - Fixed issues with HTTPS_PROXY and large bodies [THREESCALE-3863](https://issues.jboss.org/browse/THREESCALE-3863) [PR #1191](https://github.com/3scale/APIcast/pull/1191)
-
+- Fixed issues with path routing and query args [THREESCALE-5149](https://issues.redhat.com/browse/THREESCALE-5149) [PR #1190](https://github.com/3scale/APIcast/pull/1190)
 
 ### Added
 

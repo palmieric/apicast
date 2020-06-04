@@ -4,6 +4,7 @@ local insert = table.insert
 local concat = table.concat
 local rawset = rawset
 local lower = string.lower
+local resty_env = require('resty.env')
 
 local env = require 'resty.env'
 local lrucache = require 'resty.lrucache'
@@ -114,7 +115,8 @@ function _M.store(self, config, ttl)
   local services = config.services or {}
   local by_host = setmetatable({}, hashed_array)
   local oidc = config.oidc or {}
-
+  local env = (lower(resty_env.value('THREESCALE_DEPLOYMENT_ENV') or 'production') == 'production' and 1 or 2)
+ 
   local ids = {}
 
   for i=1, #services do
@@ -132,16 +134,20 @@ function _M.store(self, config, ttl)
     if not ids[id] then
       ngx.log(ngx.INFO, 'added service ', id, ' configuration with hosts: ', concat(hosts, ', '), ' ttl: ', ttl)
 
-      for j=1, #hosts do
-        local host = lower(hosts[j])
-        local h = by_host[host]
+      --print("****************")
+      --print("hosts: ", require("inspect").inspect(hosts))
+      --print("env: ", env)
+      --print("hosts: ", require("inspect").inspect(hosts[env]))
+      --print("****************")
+      local host = lower(hosts[env])
+      local h = by_host[host]
 
-        if #(h) == 0 or self.path_routing then
-          insert(h, service)
-        else
-          ngx.log(ngx.WARN, 'skipping host ', host, ' for service ', id, ' already defined by service ', h[1].id)
-        end
+      if #(h) == 0 or self.path_routing then
+        insert(h, service)
+      else
+        ngx.log(ngx.WARN, 'skipping host ', host, ' for service ', id, ' already defined by service ', h[1].id)
       end
+    
 
       self.services:set(id, services[i]) -- FIXME: no ttl here, is that correct assumption?
       ids[id] = services[i]

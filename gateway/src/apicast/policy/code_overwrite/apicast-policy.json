@@ -3,7 +3,7 @@
   "name": "HTTP Code Overwrite",
   "summary": "Modify the HTTP status code returned by the upstream",
   "description":
-    ["Configures a 1-1 mapping for upstream's http codes  "],
+    ["Configures a 1-1 mapping for upstream's http codes."],
   "version": "builtin",
   "configuration": {
     "type": "object",

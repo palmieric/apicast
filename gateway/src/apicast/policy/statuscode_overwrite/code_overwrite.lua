@@ -6,10 +6,9 @@ local new = _M.new
 function _M.new(config)
     local self = new(config)
     self.http_codes = {}
-    for _, code in ipairs(config.http_codes) do
+    for _, code in ipairs(config.http_codes or {}) do
         self.http_codes[code.upstream] = code.apicast
     end
-      
     return self
   end
 

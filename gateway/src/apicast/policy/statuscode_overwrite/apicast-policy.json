@@ -1,6 +1,6 @@
 {
   "$schema": "http://apicast.io/policy-v1.1/schema#manifest#",
-  "name": "HTTP Code Overwrite",
+  "name": "HTTP Status Code Overwrite",
   "summary": "Modify the HTTP status code returned by the upstream",
   "description":
     ["Configures a 1-1 mapping for upstream's http codes."],
@@ -13,14 +13,23 @@
         "type": "array",
         "items": {
           "type": "object",
+          "required": [
+            "upstream",
+            "apicast"
+          ],
           "properties": {
             "upstream": {
               "description": "Upstream HTTP code to replace",
-              "type": "integer"
+              "type": "integer",
+              "minimum": 100,
+              "maximum": 600
             },
             "apicast": {
+               "title": "Return HTTP code",
               "description": "HTTP code to return",
-              "type": "integer"
+              "type": "integer",
+              "minimum": 100,
+              "maximum": 600
             }
           }
         }
@@ -28,7 +37,9 @@
       }
     },
     "properties": {
-      "http_codes": { "$ref": "#/definitions/codes" }
+      "http_codes": {
+        "title": "HTTP status codes map",
+        "$ref": "#/definitions/codes" }
     }
   }
 }

@@ -1,9 +1,6 @@
 use lib 't';
 use Test::APIcast::Blackbox 'no_plan';
 
-# Can't run twice because of the setup of the cache for the tests.
-repeat_each(1);
-
 run_tests();
 
 __DATA__
@@ -20,7 +17,7 @@ __DATA__
       "proxy": {
         "policy_chain": [
           {
-            "name": "code_overwrite",
+            "name": "statuscode_overwrite",
             "version": "builtin",
             "configuration": {
               "http_codes": [
@@ -76,7 +73,7 @@ __DATA__
 --- error_code eval
 [ 201, 401, 401 ]
 
-=== TEST 1: HTTP CODES policy placed after apicast
+=== TEST 2: HTTP CODES policy placed after apicast
 --- configuration
 {
   "services": [
@@ -91,7 +88,7 @@ __DATA__
             "name": "apicast.policy.apicast"
           },
           {
-            "name": "code_overwrite",
+            "name": "statuscode_overwrite",
             "version": "builtin",
             "configuration": {
               "http_codes": [

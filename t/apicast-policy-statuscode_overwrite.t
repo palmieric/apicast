@@ -20,7 +20,7 @@ __DATA__
             "name": "statuscode_overwrite",
             "version": "builtin",
             "configuration": {
-              "http_codes": [
+              "http_statuses": [
                 {
                   "upstream": 200,
                   "apicast": 201
@@ -91,7 +91,7 @@ __DATA__
             "name": "statuscode_overwrite",
             "version": "builtin",
             "configuration": {
-              "http_codes": [
+              "http_statuses": [
                 {
                   "upstream": 200,
                   "apicast": 201

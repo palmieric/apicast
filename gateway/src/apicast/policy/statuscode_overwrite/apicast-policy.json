@@ -37,7 +37,7 @@
       }
     },
     "properties": {
-      "http_codes": {
+      "http_statuses": {
         "title": "HTTP status codes map",
         "$ref": "#/definitions/codes" }
     }

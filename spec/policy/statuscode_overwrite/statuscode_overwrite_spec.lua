@@ -4,7 +4,7 @@ describe('Status Codes overwrite policy', function()
 
   it('mapped correctly valid status code', function()
       local policy = StatusCodeOverwrite.new({
-        http_codes = {
+        http_statuses = {
           { upstream=200, apicast=201 }
         }
       })
@@ -22,7 +22,7 @@ describe('Status Codes overwrite policy', function()
   it('invalid code fails correctly', function()
     assert.has_error(function()
       return StatusCodeOverwrite.new({
-        http_codes = {
+        http_statuses = {
           { upstream=1, apicast=201 }
         }})
       end)
@@ -33,7 +33,7 @@ describe('Status Codes overwrite policy', function()
   it('Upstream code is not defined', function()
     assert.has_error(function()
       return StatusCodeOverwrite.new({
-        http_codes = {
+        http_statuses = {
           { apicast=201 }
         }})
       end)
@@ -42,7 +42,7 @@ describe('Status Codes overwrite policy', function()
   it('Apicast code is not defined', function()
     assert.has_error(function()
       return StatusCodeOverwrite.new({
-        http_codes = {
+        http_statuses = {
           { upstream=201 }
         }})
       end)
